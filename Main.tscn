@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu1rogi7ovbff"]
+
+[ext_resource type="PackedScene" uid="uid://dgdlbyg474350" path="res://tools/joystick.tscn" id="1_o5ofs"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Joystick" parent="." instance=ExtResource("1_o5ofs")]
+position = Vector2(428, 334)

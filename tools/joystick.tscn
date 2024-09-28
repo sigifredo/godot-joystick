@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgdlbyg474350"]
+
+[ext_resource type="Script" path="res://tools/joystick.gd" id="1_m7ivd"]
+[ext_resource type="Texture2D" uid="uid://d0dhhanbsj3fl" path="res://assets/joyring.png" id="1_ye08l"]
+[ext_resource type="Texture2D" uid="uid://frvldvbbl1ha" path="res://assets/joyknob.png" id="2_xn1nx"]
+[ext_resource type="Script" path="res://tools/knob.gd" id="4_4sk2d"]
+
+[node name="Joystick" type="Node2D"]
+script = ExtResource("1_m7ivd")
+
+[node name="Ring" type="Sprite2D" parent="."]
+texture = ExtResource("1_ye08l")
+
+[node name="Knob" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_xn1nx")
+script = ExtResource("4_4sk2d")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -244.0
+offset_top = -244.0
+offset_right = 244.0
+offset_bottom = 244.0
+
+[connection signal="button_down" from="Button" to="Knob" method="_on_button_down"]
+[connection signal="button_up" from="Button" to="Knob" method="_on_button_up"]
