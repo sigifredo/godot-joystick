@@ -3,11 +3,11 @@ extends Sprite2D
 var pressing:bool = false
 
 @onready var parent = $".."
-@export var maxLength = 50
-@export var deadzone = 5
+@export var maxLength = 250
+@export var deadzone = 25
 
 func _ready() -> void:
-	pass # Replace with function body.
+	maxLength *= parent.scale.x
 
 
 func _process(delta: float) -> void:
