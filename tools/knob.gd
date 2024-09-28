@@ -6,6 +6,8 @@ var pressing:bool = false
 @export var maxLength = 250
 @export var deadzone = 25
 
+signal change_position(pos_vector: Vector2)
+
 func _ready() -> void:
 	maxLength *= parent.scale.x
 
@@ -21,6 +23,11 @@ func _process(delta: float) -> void:
 			global_position.y = parent.global_position.y + sin(angle) * maxLength
 	else:
 		global_position = lerp(global_position, parent.global_position, delta * 10)
+
+func calculateVector():
+	var posVector = Vector2(0, 0)
+
+	change_position.emit(posVector)
 
 func _on_button_down() -> void:
 	pressing = true
