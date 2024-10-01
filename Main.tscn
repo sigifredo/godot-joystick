@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://main.gd" id="1_lwddv"]
 [ext_resource type="PackedScene" uid="uid://dgdlbyg474350" path="res://tools/joystick.tscn" id="1_o5ofs"]
 [ext_resource type="Texture2D" uid="uid://dh3gq0h52nvvc" path="res://tools/images.png" id="2_2hxgr"]
-[ext_resource type="Script" path="res://character_body_2d.gd" id="2_s3dv7"]
+[ext_resource type="Script" path="res://player.gd" id="2_s3dv7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ykdqf"]
 
@@ -11,16 +11,17 @@
 script = ExtResource("1_lwddv")
 
 [node name="Joystick" parent="." instance=ExtResource("1_o5ofs")]
-position = Vector2(428, 334)
+position = Vector2(985, 500)
+scale = Vector2(0.5, 0.5)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(782, 195)
 script = ExtResource("2_s3dv7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="Collision" type="CollisionShape2D" parent="Player"]
 shape = SubResource("RectangleShape2D_ykdqf")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite" type="Sprite2D" parent="Player"]
 position = Vector2(-4.76837e-07, -4.76837e-07)
 scale = Vector2(0.0633333, 0.0633333)
 texture = ExtResource("2_2hxgr")
